@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% static 'venkatasaiprasad.pdf' %}" target="_blank">Resume</a>
+                    <a class="nav-link" href="{% static 'venkatasaiprasadtalamala.pdf' %}" target="_blank">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/vtalamala/" target="_blank">LinkedIn</a>
@@ -50,16 +50,81 @@
                 <li class="nav-item">
                     <a class="nav-link" href="tel:9704504740">Mobile</a>
                 </li>
-                <li>
-                    <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
+                <li class="nav-item">
+                    <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-outline-primary">Blog</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container" style="padding-top:75px;">
     {% block content %}{% endblock %}
 </div>
+
+<style>
+
+    @media screen and (max-width: 600px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar.responsive {position: relative;}
+      .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    #topNav {
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        background-color: aliceblue;
+        z-index: 987687639;
+    }
+    ul li a:hover {
+        border-color:#007bff;
+        border: 0.55px solid #007bff;
+        border-radius: 0.25rem;
+        transform: scale(1.5);
+        z-index: 4;
+        transition: 0.5s;
+    }
+
+    div a:hover{
+        transform: scale(1.5);
+        z-index: 4;
+        transition: 0.5s;
+    }
+    .nav-item {
+        padding:10px;
+    }
+
+
+</style>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("topNav");
+  if (x.className === "navbar navbar-expand-md navbar-light") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+
+
+</script>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
